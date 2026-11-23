@@ -12,174 +12,68 @@
 
 <body>
 
-  <div class="stars"></div>
-
-  <header class="top">
-    <span>♡ A LITTLE SOMETHING FOR YOU ♡</span>
+  <nav class="topbar">
+    <span class="brand">A ♡</span>
+    <span class="top-label">A LITTLE WORLD FOR YOU</span>
     <span class="flag">🏁</span>
-  </header>
+  </nav>
 
   <main>
+    <section class="hero">
 
-    <!-- PORTADA -->
-    <section class="hero" id="inicio">
-      <p class="eyebrow">A veces las palabras no son suficientes...</p>
+      <div class="floating-heart heart-one">♡</div>
+      <div class="floating-heart heart-two">♡</div>
+      <div class="floating-heart heart-three">♥</div>
 
-      <h1>Para ti, <span>Abigail</span></h1>
+      <p class="eyebrow">UNA PEQUEÑA SORPRESA PARA ALGUIEN ESPECIAL</p>
 
-      <div class="heart-icon">♡</div>
+      <h1>Hola, <span>Abigail</span></h1>
 
-      <p class="intro">
-        Hay algo que quiero decirte, y esta vez quiero hacerlo
-        con calma, desde el corazón y sin esperar nada a cambio.
+      <div class="hero-heart">♡</div>
+
+      <p class="hero-text">
+        Preparé algo para ti.
+        No es perfecto, pero está hecho con mucho cariño,
+        dedicación y con unas palabras que quería que pudieras leer.
       </p>
-
-      <button class="main-button" onclick="irCarta()">
-        Tengo algo que decirte <span>♡</span>
-      </button>
-
-      <p class="small-note">Hecho especialmente para ti</p>
-    </section>
-
-    <!-- FORMULA 1 -->
-    <section class="f1-section">
-      <div class="f1-line"></div>
-      <p class="eyebrow">A LITTLE F1 MOMENT</p>
-      <h2>Una pequeña parada en boxes 🏎️</h2>
-
-      <p>
-        Sé que te gusta la Fórmula 1, así que no podía faltar
-        un pequeño detalle inspirado en ese mundo.
-      </p>
-
-      <div class="racing-card">
-        <div class="racing-number">01</div>
-        <div>
-          <h3>MAX VERSTAPPEN</h3>
-          <p>RED BULL RACING · FORMULA 1</p>
-        </div>
-        <span class="checkered">🏁</span>
-      </div>
-
-      <p class="f1-quote">
-        Porque hasta en una carrera hay momentos para detenerse,
-        pensar y corregir el rumbo.
-      </p>
-    </section>
-
-    <!-- CARTA -->
-    <section class="letter-section" id="carta">
-      <p class="eyebrow">A LETTER FROM MY HEART</p>
-      <h2>Quiero pedirte <span>perdón</span></h2>
-
-      <div class="envelope">
-        <div class="envelope-top">♡</div>
-        <p>Una carta para Abigail</p>
-        <button class="main-button" onclick="mostrarCarta()">
-          Abrir mi carta
-        </button>
-      </div>
-
-      <article class="letter hidden" id="textoCarta">
-        <p>Abigail,</p>
-
-        <p>
-          Quiero pedirte perdón por lo que te dije. Haber tomado
-          no justifica mis palabras ni hace que hayan dolido menos.
-          Me equivoqué al decirte que merecías algo mejor, y entiendo
-          que eso pudo hacerte sentir mal.
-        </p>
-
-        <p>
-          No quiero minimizar lo que pasó ni pedirte que lo olvides
-          de un momento a otro. Reconozco que debí pensar antes de
-          hablar y cuidar mucho más la manera en que me expresaba contigo.
-        </p>
-
-        <p>
-          Me importas, y por eso quería ofrecerte una disculpa sincera.
-          No te escribo para presionarte, para que me respondas ahora
-          ni para que me perdones por compromiso. Tienes derecho a
-          sentir lo que sientes y a tomar el tiempo que necesites.
-        </p>
-
-        <p>
-          Solo quería que supieras que lamento haberte lastimado.
-          Si algún día quieres hablar, me gustaría escucharte con calma
-          y demostrar con hechos que puedo hacer las cosas mejor.
-        </p>
-
-        <p class="signature">
-          Con cariño,<br>
-          alguien que reconoce que se equivocó.
-        </p>
-      </article>
-    </section>
-
-    <!-- MUSICA -->
-    <section class="music-section">
-      <p class="eyebrow">A SONG FOR THIS MOMENT</p>
-      <h2>Una canción para ti ♡</h2>
-      <p>Porque hay canciones que dicen cosas que a veces no sabemos expresar.</p>
-
-      <div class="music-card">
-        <div class="music-icon">♫</div>
-        <div>
-          <h3>Inolvidable</h3>
-          <p>Reik</p>
-        </div>
-      </div>
 
       <p class="small-note">
-        Aquí agregaremos el reproductor de la canción.
-      </p>
-    </section>
-
-    <!-- CORAZON -->
-    <section class="heart-section">
-      <p class="eyebrow">A LITTLE INTERACTION</p>
-      <h2>Un pequeño corazón para ti</h2>
-
-      <p>
-        Tócalo diez veces. Cada toque representa una parte
-        de esta disculpa que quiero que conozcas.
+        Hay una pequeña aventura esperándote...
       </p>
 
-      <button class="big-heart" id="corazon" onclick="llenarCorazon()">
-        ♡
-      </button>
+      <a href="reto.html" class="main-button">
+        Comenzar nuestra aventura <span>♡</span>
+      </a>
 
-      <div class="progress">
-        <div class="progress-fill" id="barra"></div>
+      <div class="scroll-note">
+        <span>DESLIZA PARA DESCUBRIR</span>
+        <span>↓</span>
       </div>
 
-      <p id="progreso">0 de 10 momentos</p>
-      <p id="mensajeCorazon" class="heart-message"></p>
     </section>
 
-    <!-- FINAL -->
-    <section class="final-section" id="final">
-      <div class="final-heart">♡</div>
-      <h2>Gracias por llegar hasta aquí</h2>
+    <section class="intro-section">
+      <p class="eyebrow">BEFORE WE START</p>
+      <h2>Un pequeño detalle...</h2>
 
       <p>
-        No espero que estas palabras arreglen todo.
-        Sé que una disculpa también debe demostrarse con acciones.
-        Solo quería tomarme este momento para reconocer mi error
-        y decirte que de verdad lo siento.
+        No tienes que hacer nada que no quieras.
+        Puedes recorrer esta página a tu ritmo.
+        Solo quiero regalarte un momento bonito
+        y pedirte perdón de una manera especial.
       </p>
 
-      <p class="final-signature">
-        Con mucho cariño, para Abigail. ♡
-      </p>
+      <div class="mini-card">
+        <span>🏎️</span>
+        <h3>Una aventura con algunas sorpresas</h3>
+        <p>Preguntas, cartas, música y un regalo al final.</p>
+      </div>
     </section>
-
   </main>
 
   <footer>
-    HECHO CON CARIÑO ♡ · 2026
+    HECHO CON CARIÑO PARA ABIGAIL ♡
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
