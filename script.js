@@ -1,63 +1,200 @@
 
-function irCarta() {
-  document.getElementById("carta").scrollIntoView({
-    behavior: "smooth"
-  });
+const preguntas = {
+    facil: [
+        {
+            pregunta: "¿De qué país es Max Verstappen?",
+            opciones: ["Alemania", "Países Bajos", "España", "Italia"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Con qué equipo se hizo famoso Max Verstappen en la F1?",
+            opciones: ["Ferrari", "Mercedes", "Red Bull Racing", "McLaren"],
+            correcta: 2
+        },
+        {
+            pregunta: "¿Qué número utiliza Max Verstappen habitualmente?",
+            opciones: ["44", "33", "16", "1"],
+            correcta: 3
+        },
+        {
+            pregunta: "¿Qué significa la bandera a cuadros?",
+            opciones: ["Inicio de carrera", "Fin de carrera", "Peligro", "Lluvia"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Cómo se llama la competencia en la que corre Max?",
+            opciones: ["MotoGP", "Fórmula 1", "Rally", "Nascar"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Qué tipo de vehículo conduce Max?",
+            opciones: ["Un monoplaza", "Una motocicleta", "Un kart de calle", "Un automóvil de rally"],
+            correcta: 0
+        }
+    ],
+
+    medio: [
+        {
+            pregunta: "¿En qué año debutó Max Verstappen en Fórmula 1?",
+            opciones: ["2013", "2014", "2015", "2016"],
+            correcta: 2
+        },
+        {
+            pregunta: "¿En qué Gran Premio consiguió su primera victoria?",
+            opciones: ["Mónaco", "España", "Bélgica", "Brasil"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Qué edad tenía cuando debutó en F1?",
+            opciones: ["17 años", "19 años", "20 años", "21 años"],
+            correcta: 0
+        },
+        {
+            pregunta: "¿En qué año consiguió su primer campeonato mundial?",
+            opciones: ["2019", "2020", "2021", "2022"],
+            correcta: 2
+        },
+        {
+            pregunta: "¿Qué nacionalidad tiene Max?",
+            opciones: ["Belga", "Neerlandesa", "Francesa", "Alemana"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿En qué circuito ganó su primera carrera?",
+            opciones: ["Circuito de Barcelona-Cataluña", "Silverstone", "Monza", "Spa-Francorchamps"],
+            correcta: 0
+        }
+    ],
+
+    dificil: [
+        {
+            pregunta: "¿En qué equipo debutó Max en Fórmula 1?",
+            opciones: ["Red Bull Racing", "Toro Rosso", "Ferrari", "Mercedes"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Qué piloto fue compañero de Max cuando consiguió su primera victoria?",
+            opciones: ["Sergio Pérez", "Daniel Ricciardo", "Lewis Hamilton", "Carlos Sainz"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿En qué Gran Premio consiguió su primera victoria?",
+            opciones: ["Gran Premio de España", "Gran Premio de Italia", "Gran Premio de Japón", "Gran Premio de Canadá"],
+            correcta: 0
+        },
+        {
+            pregunta: "¿En qué circuito se disputó su primer Gran Premio de F1?",
+            opciones: ["Melbourne", "Mónaco", "Abu Dabi", "Silverstone"],
+            correcta: 0
+        },
+        {
+            pregunta: "¿A qué piloto venció en la lucha por el campeonato de 2021?",
+            opciones: ["Charles Leclerc", "Lewis Hamilton", "Sebastian Vettel", "Fernando Alonso"],
+            correcta: 1
+        },
+        {
+            pregunta: "¿Qué número utilizaba Max antes de adoptar el número 1?",
+            opciones: ["33", "44", "77", "16"],
+            correcta: 0
+        }
+    ]
+};
+
+let nivelActual = [];
+let preguntaActual = 0;
+let aciertos = 0;
+
+function iniciarReto(nivel) {
+    nivelActual = preguntas[nivel];
+    preguntaActual = 0;
+    aciertos = 0;
+
+    document.getElementById("resultado").innerHTML = "";
+    mostrarPregunta();
 }
 
-function mostrarCarta() {
-  const carta = document.getElementById("textoCarta");
+function mostrarPregunta() {
+    const juego = document.getElementById("juego");
 
-  carta.classList.remove("hidden");
+    if (preguntaActual >= nivelActual.length) {
+        finalizarReto();
+        return;
+    }
 
-  setTimeout(() => {
-    carta.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 100);
+    const pregunta = nivelActual[preguntaActual];
+
+    juego.innerHTML = `
+        <p class="etiqueta">
+            PREGUNTA ${preguntaActual + 1} DE ${nivelActual.length}
+        </p>
+
+        <h2>${pregunta.pregunta}</h2>
+
+        <div class="opciones">
+            ${pregunta.opciones.map((opcion, indice) => `
+                <button class="opcion" onclick="responder(${indice})">
+                    ${opcion}
+                </button>
+            `).join("")}
+        </div>
+
+        <p id="mensajeRespuesta"></p>
+    `;
 }
 
-let toques = 0;
+function responder(respuesta) {
+    const pregunta = nivelActual[preguntaActual];
+    const botones = document.querySelectorAll(".opcion");
+    const mensaje = document.getElementById("mensajeRespuesta");
 
-const mensajes = [
-  "Gracias por darme un momento de tu tiempo. ♡",
-  "Reconozco que mis palabras estuvieron mal.",
-  "No quiero justificar lo que hice.",
-  "Sé que pude haberte lastimado.",
-  "Me importan tus sentimientos.",
-  "Quiero aprender de mis errores.",
-  "Una disculpa también necesita acciones.",
-  "Respeto tu tiempo y tu espacio.",
-  "No tienes ninguna obligación de perdonarme.",
-  "De corazón, lo siento mucho, Abigail. ♡"
-];
+    botones.forEach(boton => boton.disabled = true);
 
-function llenarCorazon() {
-  if (toques >= 10) return;
+    if (respuesta === pregunta.correcta) {
+        aciertos++;
 
-  toques++;
+        const frases = [
+            "¡Muy bien! Así se hace, campeona. ♡",
+            "¡Respuesta correcta! Tienes talento para esto.",
+            "¡Excelente! Me encanta verte superar retos.",
+            "¡Esooo! Una razón más para sonreír.",
+            "¡Perfecto! Vas con todo. 🏎️"
+        ];
 
-  const porcentaje = toques * 10;
+        mensaje.innerHTML = frases[Math.floor(Math.random() * frases.length)];
+    } else {
+        mensaje.innerHTML =
+            "¡No pasa nada! Lo importante es intentarlo. Sigue adelante, bonita. ♡";
+    }
 
-  document.getElementById("barra").style.width =
-    porcentaje + "%";
+    preguntaActual++;
 
-  document.getElementById("progreso").textContent =
-    toques + " de 10 momentos";
+    const continuar = document.createElement("button");
+    continuar.textContent = "Siguiente pregunta →";
+    continuar.className = "boton";
+    continuar.onclick = mostrarPregunta;
 
-  document.getElementById("corazon").textContent =
-    toques === 10 ? "♥" : "♡";
+    mensaje.appendChild(document.createElement("br"));
+    mensaje.appendChild(continuar);
+}
 
-  document.getElementById("corazon").style.color =
-    "#f19abb";
+function finalizarReto() {
+    const juego = document.getElementById("juego");
 
-  document.getElementById("mensajeCorazon").textContent =
-    mensajes[toques - 1];
+    juego.innerHTML = `
+        <h2>¡Terminaste el reto! 🏁</h2>
+        <p>Tu resultado fue:</p>
+        <h1>${aciertos} / ${nivelActual.length}</h1>
+        <p>
+            ${aciertos === 6
+                ? "¡Increíble! Eres toda una experta. ♡"
+                : "¡Lo hiciste muy bien! Gracias por intentarlo. ♡"}
+        </p>
+        <p>Y ahora viene algo que preparé especialmente para ti...</p>
+    `;
 
-  if (toques === 10) {
-    document.getElementById("final").scrollIntoView({
-      behavior: "smooth"
-    });
-  }
+    document.getElementById("resultado").innerHTML = `
+        <a class="boton" href="cartas.html">
+            Abrir mi primera carta 💌
+        </a>
+    `;
 }
