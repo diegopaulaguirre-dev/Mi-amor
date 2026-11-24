@@ -1,4 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --pink: #f3a2c2;
+  --light-pink: #ffd9e8;
+  --dark: #100b12;
+  --card: #21131e;
+  --muted: #cbb7c3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,346 +20,228 @@ html {
 }
 
 body {
-  background: #100b12;
+  background: var(--dark);
   color: #fff1f6;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
 
-.top {
+.topbar {
+  width: 100%;
+  padding: 22px 8%;
   display: flex;
   justify-content: space-between;
-  padding: 25px 8%;
-  color: #e9a9c5;
-  font-size: 10px;
+  align-items: center;
+  border-bottom: 1px solid #49283a;
+  background: #100b12;
+}
+
+.brand {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-size: 32px;
+}
+
+.top-label {
+  color: #d7a2ba;
+  font-size: 9px;
   letter-spacing: 3px;
 }
 
 .flag {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .hero {
   min-height: 90vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 50px 25px;
+  padding: 80px 25px;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at center, #54213d 0%, #21101e 45%, #100b12 80%);
+    radial-gradient(ellipse at center, #54213d 0%, #261321 48%, #100b12 85%);
 }
 
 .eyebrow {
-  color: #e9a2c1;
-  letter-spacing: 4px;
+  color: var(--pink);
   font-size: 10px;
+  letter-spacing: 4px;
   margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-size: clamp(35px, 7vw, 70px);
+  font-size: clamp(42px, 8vw, 78px);
   font-weight: 300;
-  margin-bottom: 15px;
 }
 
-.hero h1 span,
-.letter-section h2 span {
-  color: #f19abb;
+.hero h1 span {
+  color: var(--pink);
   font-family: 'Great Vibes', cursive;
-  font-size: 1.35em;
+  font-size: 1.4em;
 }
 
-.heart-icon {
-  font-size: 70px;
-  color: #f19abb;
-  animation: latido 1.5s infinite;
-  margin: 15px;
+.hero-heart {
+  font-size: 85px;
+  color: var(--pink);
+  margin: 20px;
+  animation: heartbeat 1.7s infinite;
+  text-shadow: 0 0 30px #f3a2c277;
 }
 
-.intro {
-  max-width: 500px;
-  line-height: 2;
-  color: #d7c2ce;
+.hero-text {
+  color: var(--muted);
   font-size: 13px;
+  line-height: 2;
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.small-note {
+  color: #b68da1;
+  font-size: 10px;
+  letter-spacing: 1px;
   margin-bottom: 30px;
 }
 
 .main-button {
-  background: #ed91b6;
-  color: #210e19;
-  border: none;
-  padding: 15px 27px;
-  border-radius: 40px;
+  display: inline-block;
+  padding: 16px 28px;
+  border-radius: 50px;
+  background: var(--pink);
+  color: #261321;
+  font-size: 12px;
   font-weight: 700;
-  cursor: pointer;
+  text-decoration: none;
   transition: .3s;
-  font-family: inherit;
+  box-shadow: 0 0 25px #f3a2c233;
 }
 
 .main-button:hover {
-  transform: translateY(-4px);
-  background: #ffd0e1;
-  box-shadow: 0 0 25px #ed91b677;
+  transform: translateY(-5px);
+  background: var(--light-pink);
+  box-shadow: 0 0 35px #f3a2c277;
 }
 
-.small-note {
-  color: #a98c9c;
-  font-size: 10px;
-  margin-top: 25px;
-  letter-spacing: 1px;
+.main-button span {
+  margin-left: 8px;
 }
 
-.f1-section,
-.letter-section,
-.music-section,
-.heart-section,
-.final-section {
-  padding: 100px 22px;
-  text-align: center;
-  max-width: 850px;
+.scroll-note {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #b68da1;
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+.floating-heart {
+  position: absolute;
+  color: #f3a2c244;
+  font-size: 35px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 20%;
+  left: 15%;
+}
+
+.heart-two {
+  top: 35%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.heart-three {
+  bottom: 20%;
+  left: 22%;
+  animation-delay: 2s;
+}
+
+.intro-section {
+  max-width: 750px;
   margin: auto;
+  padding: 100px 25px;
+  text-align: center;
 }
 
-.f1-line {
-  width: 60px;
-  height: 2px;
-  background: #ed91b6;
-  margin: 0 auto 35px;
-}
-
-h2 {
-  font-size: clamp(25px, 5vw, 38px);
-  margin-bottom: 25px;
+.intro-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
   font-weight: 500;
 }
 
-.f1-section > p:not(.eyebrow),
-.music-section > p:not(.eyebrow),
-.heart-section > p:not(.eyebrow),
-.final-section > p {
-  color: #cbb7c3;
-  font-size: 13px;
+.intro-section > p:not(.eyebrow) {
+  color: var(--muted);
   line-height: 2;
-  max-width: 580px;
-  margin: 0 auto 25px;
+  font-size: 13px;
 }
 
-.racing-card {
-  margin: 40px auto;
-  padding: 25px;
-  max-width: 520px;
-  border: 1px solid #6f344f;
-  background: linear-gradient(120deg, #291321, #151019);
-  display: flex;
-  align-items: center;
-  text-align: left;
-  gap: 20px;
-  border-radius: 12px;
-}
-
-.racing-number {
-  font-size: 38px;
-  color: #ed91b6;
-  font-weight: 700;
-}
-
-.racing-card h3 {
-  font-size: 15px;
-  letter-spacing: 2px;
-}
-
-.racing-card p {
-  color: #c08ca5;
-  font-size: 9px;
-  margin-top: 8px;
-}
-
-.checkered {
-  margin-left: auto;
-  font-size: 25px;
-}
-
-.f1-quote {
-  color: #e9a2c1;
-  font-family: 'Great Vibes', cursive;
-  font-size: 27px;
-}
-
-.letter-section {
-  max-width: 750px;
-}
-
-.envelope {
-  background: linear-gradient(145deg, #3a1b30, #20101c);
-  border: 1px solid #7e3b5d;
+.mini-card {
+  margin: 45px auto 0;
+  padding: 35px 20px;
+  max-width: 400px;
+  background: linear-gradient(140deg, #321a2b, #1b111b);
+  border: 1px solid #75405b;
   border-radius: 18px;
-  padding: 45px 20px;
-  margin-top: 35px;
-  box-shadow: 0 15px 50px #0005;
 }
 
-.envelope-top {
-  font-size: 60px;
-  color: #f19abb;
-  margin-bottom: 15px;
+.mini-card span {
+  font-size: 35px;
 }
 
-.envelope p {
-  color: #e9c4d5;
-  margin-bottom: 25px;
+.mini-card h3 {
+  margin: 15px 0 10px;
+  font-size: 15px;
 }
 
-.letter {
-  background: #f8eaf0;
-  color: #412638;
-  border-radius: 15px;
-  padding: 35px;
-  margin-top: 25px;
-  text-align: left;
-  line-height: 2;
-  box-shadow: 0 15px 50px #0006;
-  animation: aparecer .8s ease;
-}
-
-.letter p {
-  font-size: 13px;
-  margin-bottom: 18px;
-}
-
-.letter .signature {
-  font-family: 'Great Vibes', cursive;
-  font-size: 27px;
-  color: #a34872;
-  margin-top: 30px;
-}
-
-.hidden {
-  display: none;
-}
-
-.music-card {
-  max-width: 380px;
-  margin: 35px auto;
-  background: #21131e;
-  border: 1px solid #62334c;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  padding: 20px;
-  gap: 20px;
-}
-
-.music-icon {
-  background: #ed91b6;
-  color: #24111c;
-  border-radius: 12px;
-  width: 55px;
-  height: 55px;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-}
-
-.music-card h3 {
-  margin-bottom: 5px;
-}
-
-.music-card p {
-  color: #c79bb0;
+.mini-card p {
+  color: var(--muted);
   font-size: 12px;
-}
-
-.big-heart {
-  background: transparent;
-  border: none;
-  color: #ed91b6;
-  font-size: 110px;
-  cursor: pointer;
-  transition: .2s;
-  margin: 20px;
-}
-
-.big-heart:hover {
-  transform: scale(1.15);
-}
-
-.progress {
-  max-width: 300px;
-  height: 7px;
-  background: #35202e;
-  border-radius: 20px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-
-.progress-fill {
-  width: 0%;
-  height: 100%;
-  background: #ed91b6;
-  transition: .4s;
-}
-
-.heart-message {
-  color: #f3a9c6 !important;
-  min-height: 30px;
-}
-
-.final-section {
-  border-top: 1px solid #482638;
-  padding-bottom: 120px;
-}
-
-.final-heart {
-  font-size: 75px;
-  color: #ed91b6;
-  margin-bottom: 20px;
-  animation: latido 1.5s infinite;
-}
-
-.final-signature {
-  color: #f19abb !important;
-  font-family: 'Great Vibes', cursive;
-  font-size: 27px !important;
+  line-height: 1.8;
 }
 
 footer {
-  text-align: center;
   padding: 25px;
-  color: #9b788a;
+  text-align: center;
+  border-top: 1px solid #49283a;
+  color: #a78296;
   font-size: 9px;
   letter-spacing: 3px;
-  border-top: 1px solid #321b2a;
 }
 
-@keyframes latido {
+@keyframes heartbeat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.12); }
 }
 
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(12deg); }
 }
 
 @media (max-width: 600px) {
-  .top {
-    padding: 20px;
-    font-size: 8px;
+  .topbar {
+    padding: 18px;
   }
 
-  .letter {
-    padding: 25px 20px;
+  .top-label {
+    font-size: 7px;
+    letter-spacing: 1px;
   }
 
-  .racing-card {
-    gap: 12px;
-    padding: 17px;
+  .hero {
+    min-height: 85vh;
   }
 
-  .racing-number {
-    font-size: 28px;
+  .floating-heart {
+    font-size: 25px;
   }
 }
