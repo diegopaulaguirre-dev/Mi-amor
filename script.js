@@ -242,3 +242,8 @@ function mostrarDetalle(numero) {
     document.getElementById("tituloDetalle").textContent = detalle.titulo;
     document.getElementById("textoDetalle").textContent = detalle.texto;
 }
+
+function mostrarRegalo() {
+    const sorpresa = document.getElementById("sorpresaFinal");
+    sorpresa.hidden = false;
+}
