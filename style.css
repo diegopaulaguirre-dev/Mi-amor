@@ -245,3 +245,163 @@ footer {
     font-size: 25px;
   }
 }
+
+/* SECCIONES NUEVAS */
+
+[hidden] {
+    display: none !important;
+}
+
+.cartas-grid,
+.detalles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.carta,
+.mensaje-detalle,
+.musica-card,
+.regalo-card {
+    text-align: center;
+}
+
+.sobre {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.contenido-carta {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255, 105, 180, 0.10);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.detalle {
+    min-height: 130px;
+    padding: 20px;
+    border: 1px solid rgba(255, 105, 180, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.25s, background 0.25s;
+}
+
+.detalle:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 105, 180, 0.15);
+}
+
+.detalle span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.detalle small {
+    font-size: 13px;
+}
+
+.mensaje-detalle {
+    margin: 30px 0;
+    min-height: 160px;
+}
+
+.portada-musica {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    font-size: 75px;
+    color: white;
+    background: linear-gradient(135deg, #ff69b4, #8b174e);
+    box-shadow: 0 10px 35px rgba(255, 105, 180, 0.2);
+}
+
+.nota-musica {
+    margin-top: 22px;
+    opacity: 0.75;
+    font-size: 14px;
+}
+
+.caja-regalo {
+    font-size: 85px;
+    margin-bottom: 15px;
+    animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.separador {
+    height: 1px;
+    margin: 30px 0;
+    background: rgba(255, 105, 180, 0.3);
+}
+
+.video-contenedor {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+.video-contenedor video {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+.firma {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #ff8ac4;
+}
+
+.opciones {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.opcion {
+    padding: 13px;
+    border: 1px solid rgba(255, 105, 180, 0.35);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    cursor: pointer;
+}
+
+.opcion:hover:not(:disabled) {
+    background: rgba(255, 105, 180, 0.18);
+}
+
+.opcion:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+button,
+.boton {
+    font: inherit;
+}
+
+@media (max-width: 600px) {
+    .cartas-grid,
+    .detalles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle {
+        min-height: 105px;
+    }
+}
