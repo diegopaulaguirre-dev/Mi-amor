@@ -198,3 +198,13 @@ function finalizarReto() {
         </a>
     `;
 }
+
+function abrirCarta(numero) {
+    const carta = document.getElementById("carta" + numero);
+
+    if (carta.hidden) {
+        carta.hidden = false;
+    } else {
+        carta.hidden = true;
+    }
+}
