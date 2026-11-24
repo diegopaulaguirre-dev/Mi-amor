@@ -208,3 +208,37 @@ function abrirCarta(numero) {
         carta.hidden = true;
     }
 }
+
+const detallesAbigail = [
+    {
+        titulo: "Un detalle para ti ♡",
+        texto: "Quería preparar algo diferente, algo que pudieras abrir y que te recordara que eres una persona muy especial."
+    },
+    {
+        titulo: "Una razón 🌷",
+        texto: "Porque tu forma de ser, tus gustos y esos pequeños detalles que te hacen única son cosas que valoro muchísimo."
+    },
+    {
+        titulo: "Un deseo 🎀",
+        texto: "Deseo que tengas días llenos de felicidad, que cumplas tus metas y que nunca dejes de perseguir aquello que te hace feliz."
+    },
+    {
+        titulo: "Un recuerdo 🖤",
+        texto: "Hay momentos pequeños que se quedan guardados en el corazón. Algunos de ellos tienen algo que ver contigo."
+    },
+    {
+        titulo: "Una sonrisa ✨",
+        texto: "Espero que mientras recorres esta página encuentres al menos una razón para sonreír."
+    },
+    {
+        titulo: "Un mensaje 💌",
+        texto: "No tienes que responder nada ni sentirte comprometida con este detalle. Solo quería hacerte algo bonito."
+    }
+];
+
+function mostrarDetalle(numero) {
+    const detalle = detallesAbigail[numero];
+
+    document.getElementById("tituloDetalle").textContent = detalle.titulo;
+    document.getElementById("textoDetalle").textContent = detalle.texto;
+}
