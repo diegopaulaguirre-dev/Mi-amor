@@ -420,6 +420,16 @@ button,
     color: #ff8ac4;
 }
 
+.sorpresa-gif {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(255, 105, 180, 0.25);
+}
+
     .detalle {
         min-height: 105px;
     }
