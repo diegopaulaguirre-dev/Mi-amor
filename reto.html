@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un pequeño reto ♡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">A ♡</a>
+        <span>Un pequeño reto para ti</span>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <p class="etiqueta">FORMULA 1 · MAX VERSTAPPEN</p>
+            <h1>¿Qué tanto sabes de F1? 🏎️</h1>
+            <p>
+                Antes de continuar, tengo un pequeño reto para ti.
+                No te preocupes, lo importante es intentarlo. ♡
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Elige tu nivel</h2>
+
+            <div class="niveles">
+                <button onclick="iniciarReto('facil')">Fácil</button>
+                <button onclick="iniciarReto('medio')">Intermedio</button>
+                <button onclick="iniciarReto('dificil')">Difícil</button>
+            </div>
+
+            <div id="juego" class="juego">
+                <p>Selecciona un nivel para comenzar.</p>
+            </div>
+
+            <div id="resultado"></div>
+        </section>
+
+        <a class="boton" href="index.html">Volver al inicio</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
